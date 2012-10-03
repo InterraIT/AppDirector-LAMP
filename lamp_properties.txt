@@ -1,0 +1,10 @@
+# Parameter
+http_port=80
+http_proxy_port=8081
+db_port=3306
+db_root_ username=root
+db_root_password=vmware
+bind_ip=self:ip
+document_root="" # overridable at run time
+php_ini_file=""  # overridable at run time
+mysql_service="" # overridable at run time
