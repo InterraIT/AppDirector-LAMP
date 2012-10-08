@@ -2,6 +2,23 @@
 
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
+# FUNTION TO CHECK ERROR
+function check_response_code()
+{
+   if [ "$?" = "0" ]; then
+      echo "Database Installed Successfully";
+   else
+      error_exit "Unsuccessful Installation. Error Code $?";
+   fi
+}
+
+function check_error()
+{
+   if [ ! "$?" = "0" ]; then
+      error_exit "$1";
+   fi
+}
+
 # INSTALLATION OF LAMP -- START
 if [ -f /etc/redhat-release ] ; then
 	REV=`cat /etc/redhat-release | sed s/.*release\ // | sed s/\ .*//`
